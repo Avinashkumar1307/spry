@@ -2,6 +2,9 @@
 
 A modern, feature-rich task management application built with Next.js 15, TypeScript, and Tailwind CSS. Organize your tasks efficiently with an intuitive interface, powerful filtering, and smooth animations.
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://spry-task-manager.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/Avinashkumar1307/spry)
+
 ![Task Dashboard](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat-square&logo=tailwindcss)
@@ -78,7 +81,7 @@ spry/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Avinashkumar1307/spry.git
    cd spry
    ```
 
@@ -289,11 +292,20 @@ Tasks are automatically saved to browser's Local Storage:
 
 Contributions are welcome! Please follow these steps:
 
-1. Fork the repository
+1. Fork the repository from [https://github.com/Avinashkumar1307/spry](https://github.com/Avinashkumar1307/spry)
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style and conventions
+- Write meaningful commit messages
+- Test your changes thoroughly before submitting
+- Update documentation if needed
+- Ensure the build passes: `npm run build`
+- Check for linting errors: `npm run lint`
 
 ## Future Enhancements
 
@@ -312,9 +324,21 @@ Potential features for future development:
 - [ ] Task templates
 - [ ] Analytics and insights
 
+## Links
+
+- **Live Demo**: [https://spry-task-manager.vercel.app](https://spry-task-manager.vercel.app)
+- **Repository**: [https://github.com/Avinashkumar1307/spry](https://github.com/Avinashkumar1307/spry)
+- **Issues**: [Report a bug](https://github.com/Avinashkumar1307/spry/issues)
+- **Pull Requests**: [Submit a PR](https://github.com/Avinashkumar1307/spry/pulls)
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## Author
+
+**Avinash Kumar**
+- GitHub: [@Avinashkumar1307](https://github.com/Avinashkumar1307)
 
 ## Acknowledgments
 
@@ -322,7 +346,10 @@ This project is open source and available under the [MIT License](LICENSE).
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
 - Icons inspired by [Heroicons](https://heroicons.com/)
 - Typography using system fonts for optimal performance
+- Developed with assistance from [Claude Code](https://claude.com/claude-code)
 
 ---
 
 **Made with ❤️ using Next.js, TypeScript, and Tailwind CSS**
+
+⭐ Star this repository if you find it helpful!
