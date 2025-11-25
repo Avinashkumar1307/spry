@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Task } from "@/types/task";
 import { useTasks } from "@/context/TaskContext";
 import { useToast } from "@/context/ToastContext";
+import ConfirmModal from "./ConfirmModal";
 
 interface TaskCardProps {
   task: Task;
@@ -14,6 +15,7 @@ export default function TaskCard({ task, onEdit }: TaskCardProps) {
   const { deleteTask } = useTasks();
   const { showToast } = useToast();
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const getStatusColor = (status: Task["status"]) => {
     switch (status) {
@@ -64,14 +66,16 @@ export default function TaskCard({ task, onEdit }: TaskCardProps) {
     return new Date(dueDate) < new Date() && task.status !== "Completed";
   };
 
-  const handleDelete = () => {
-    if (confirm("Are you sure you want to delete this task?")) {
-      setIsDeleting(true);
-      setTimeout(() => {
-        deleteTask(task.id);
-        showToast("Task deleted successfully", "success");
-      }, 300);
-    }
+  const handleDeleteClick = () => {
+    setShowDeleteModal(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    setIsDeleting(true);
+    setTimeout(() => {
+      deleteTask(task.id);
+      showToast("Task deleted successfully", "success");
+    }, 300);
   };
 
   return (
@@ -147,7 +151,7 @@ export default function TaskCard({ task, onEdit }: TaskCardProps) {
             Edit
           </button>
           <button
-            onClick={handleDelete}
+            onClick={handleDeleteClick}
             className="flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
             <svg
@@ -167,6 +171,17 @@ export default function TaskCard({ task, onEdit }: TaskCardProps) {
           </button>
         </div>
       </div>
+
+      {/* Delete Confirmation Modal */}
+      <ConfirmModal
+        isOpen={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+        onConfirm={handleDeleteConfirm}
+        title="Delete Task"
+        message={`Are you sure you want to delete "${task.title}"? This action cannot be undone.`}
+        confirmText="Delete"
+        cancelText="Cancel"
+      />
     </div>
   );
 }
